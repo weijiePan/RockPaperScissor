@@ -3,14 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel = "stylesheet" href = "index.css" />
         <title>Document</title>
     </head>
     <body>
-    
-        <div class = "choice-container">
-            <button class = "player-choice" id = "rock">rock</button>
-            <button class = "player-choice" id = "paper">paper</button>
-            <button class = "player-choice" id = "scissor">scissor</button>
+        <div class = "displayContainer" id = "choicesDisplay">
+            <div class = "row" id = "row1">
+                <img class = "choiceBox" id="r1b1"></img>
+                <img class = "choiceBox" id="r1b2"></img>
+                <img class = "choiceBox" id="r1b3"></img>
+            </div>
+            <div class = "row" id = "row2">
+                <img class = "choiceBox" id="r2b1"></img>
+                <img class = "choiceBox" id="r2b2"></img>
+                <img class = "choiceBox" id="r2b3"></img>
+            </div>
+        </div>
+        <div class = "displayContainer" id = "buttonsDisplay">
+            <button class = "playerChoice" id = "rock">rock</button>
+            <button class = "playerChoice" id = "paper">paper</button>
+            <button class = "playerChoice" id = "scissor">scissor</button>
         </div>
     </body>
     <script src = "index.js"></script>

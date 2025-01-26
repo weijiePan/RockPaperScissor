@@ -1,10 +1,33 @@
-let rock = document.getElementById("rock");
-let paper = document.getElementById("paper");
-let scissor = document.getElementById("scissor");
-
 let playerWins = 0;
 let pcWins = 0;
+let currentTurn = 0;
 
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissor = document.getElementById("scissor");
+
+const r1 = [document.getElementById("r1b1"), document.getElementById("r1b2"), document.getElementById("r1b3")];
+const r2 = [document.getElementById("r2b1"), document.getElementById("r2b2"), document.getElementById("r2b3")]
+
+const constImgRef = ["assets/rock.png", "assets/paper.png", "assets/scissor.png"];
+
+function assignImages(pChoice, pcChoice){
+    r1[currentTurn].setAttribute("src", constImgRef[pChoice - 1]);
+    r2[currentTurn].setAttribute("src", constImgRef[pcChoice - 1]);
+}
+
+function checkGameCompletion(){
+    if(currentTurn == 2){
+        //end game
+        //the timeout function allows time for the choice-box to update its display before alerting result
+        setTimeout(() => {if(playerWins > pcWins){
+            alert("you win");
+        }else{
+            alert("you lost");
+        }}, 200)
+        
+    }
+}
 //choice 1 = "rock", choice 2 = "paper" choice 3 = "scissor"
 function changeScore(choice){
     let pcChoice = Math.floor(Math.random() * 3 + 1);
@@ -32,20 +55,13 @@ function changeScore(choice){
         playerWins++;
     }
     console.log("playerc: "+ choice + " pcc: " + pcChoice );
+    assignImages(choice, pcChoice);
     checkGameCompletion();
+    currentTurn++;
 
 }
 
-function checkGameCompletion(){
-    if(playerWins + pcWins == 3){
-        //end game
-        if(playerWins > pcWins){
-            alert("you win");
-        }else{
-            alert("you lost");
-        }
-    }
-}
+
 
 rock.addEventListener("click", () => (changeScore(1)));
 paper.addEventListener("click", () => (changeScore(2)));

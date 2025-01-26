@@ -1,0 +1,54 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height:100%; 
+}
+
+.displayContainer{
+    width:50%;
+    background-color: blue;
+    border:black 2px solid;
+    margin:5% auto 5% auto;
+    display: flex;
+}
+
+
+#choicesDisplay{
+    height: 40%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.row{
+    height: 45%;
+    width: 80%;
+    background-color: azure;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choiceBox{
+    height: 80%;
+    width:20%;
+    background-color: bisque;
+}
+#buttonsDisplay{
+
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+.playerChoice{
+    display: inline-block;
+    height:30%;
+    width:15%;
+    margin:0 20px 0 20px;
+    font-size: 11px;
+    border:solid black 2px; 
+    border-radius: 7px;
+}
