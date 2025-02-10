@@ -66,14 +66,25 @@ function changeScore(choice){
 }
 
 
-
+//register player choice
 buttonsDisplay.addEventListener("mousedown",(e)=>{
     if(e.target.id == "rock"){
         changeScore(1);
     }else if(e.target.id == "paper"){
         changeScore(2);
     }else if(e.target.id == "scissor"){
-        changeScore(3);
+        changeScore(3)
     }
 })
 
+buttonsDisplay.addEventListener("mouseover", (e)=>{
+    if(e.target !== buttonsDisplay){
+        e.target.setAttribute("style", "height:60px; width:120px");
+    }
+})
+
+buttonsDisplay.addEventListener("mouseout", (e)=>{
+    if(e.target !== buttonsDisplay){
+        e.target.setAttribute("style", "height:30%; width:15%");
+    }
+})
