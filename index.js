@@ -6,11 +6,16 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissor = document.getElementById("scissor");
 
+//rows that display what player and pc has chose
+//r1 for player
+//r2 for pc
 const r1 = [document.getElementById("r1b1"), document.getElementById("r1b2"), document.getElementById("r1b3")];
 const r2 = [document.getElementById("r2b1"), document.getElementById("r2b2"), document.getElementById("r2b3")]
 
+//rock paper scissor sprites to use for displaying choices
 const constImgRef = ["assets/rock.png", "assets/paper.png", "assets/scissor.png"];
 
+//assigns appropriate choices(rock,paper, scissor) to each row's element
 function assignImages(pChoice, pcChoice){
     r1[currentTurn].setAttribute("src", constImgRef[pChoice - 1]);
     r2[currentTurn].setAttribute("src", constImgRef[pcChoice - 1]);
@@ -63,7 +68,7 @@ function changeScore(choice){
 
 
 
-rock.addEventListener("click", () => (changeScore(1)));
-paper.addEventListener("click", () => (changeScore(2)));
-scissor.addEventListener("click", () => (changeScore(3)));
+rock.addEventListener("mousedown", () => (changeScore(1)));
+paper.addEventListener("mousedown", () => (changeScore(2)));
+scissor.addEventListener("mousedown", () => (changeScore(3)));
 
