@@ -2,9 +2,8 @@ let playerWins = 0;
 let pcWins = 0;
 let currentTurn = 0;
 
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissor = document.getElementById("scissor");
+const buttonsDisplay = document.getElementById("buttonsDisplay");
+
 
 //rows that display what player and pc has chose
 //r1 for player
@@ -68,7 +67,13 @@ function changeScore(choice){
 
 
 
-rock.addEventListener("mousedown", () => (changeScore(1)));
-paper.addEventListener("mousedown", () => (changeScore(2)));
-scissor.addEventListener("mousedown", () => (changeScore(3)));
+buttonsDisplay.addEventListener("mousedown",(e)=>{
+    if(e.target.id == "rock"){
+        changeScore(1);
+    }else if(e.target.id == "paper"){
+        changeScore(2);
+    }else if(e.target.id == "scissor"){
+        changeScore(3);
+    }
+})
 
